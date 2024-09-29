@@ -23,6 +23,7 @@ public class Aluno {
 		return numero;
 	}
 	
+	// 2.2 ler alunos de ficheiro
 	public static ArrayList<Aluno> readAlunos(String path){
 		ArrayList<Aluno> alunos = new ArrayList<>();
 
@@ -35,9 +36,9 @@ public class Aluno {
 				int numero = Integer.parseInt(tokens[0]);
 				String nome = tokens[1];
 				Aluno a = new Aluno (nome, numero);
+				alunos.add(a); //não estava a adicionar !!
 			}
 			s.close();
-
 		} catch (FileNotFoundException e){
 			e.printStackTrace();
 		}
