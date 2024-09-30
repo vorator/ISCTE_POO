@@ -21,12 +21,20 @@ public class Disciplina {
 		this.capacidade = capacidade;
 	}
 
-	// construtor para 2.3
+	// construtor para 2.3 com ArrayList
 	public Disciplina(String nome, int capacidade, ArrayList<Aluno> alunos) {
 		this.nome = nome;
 		this.sigla = getSigla(nome);
 		this.capacidade = capacidade;
 		inscreverVarios(alunos);
+	}
+	
+	// construtor para 2.3 com Ficheiro
+	public Disciplina(String nome, int capacidade, String path) {
+		this.nome = nome;
+		this.sigla = getSigla(nome);
+		this.capacidade = capacidade;
+		inscreverVarios(Aluno.readAlunos(path));
 	}
 
 	// construtor para 2.5

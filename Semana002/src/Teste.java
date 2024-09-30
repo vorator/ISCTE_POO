@@ -59,6 +59,10 @@ public class Teste {
 //		Disciplina bd = new Disciplina("Bases de Dados", 40, inscricoes);
 //		bd.printDisciplina();
 		
+		//criar disciplina com aluno em ficheiro
+//		Disciplina bd = new Disciplina("Bases de Dados", 40, "estudantes.txt");
+//		bd.printDisciplina();
+		
 		// escrever notas para um ficheiro
 //		poo.writeNotaToFile();
 		
