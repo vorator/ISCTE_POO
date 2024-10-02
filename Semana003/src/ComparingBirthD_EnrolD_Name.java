@@ -1,6 +1,6 @@
 import java.util.Comparator;
 
-public class ComparingBithEnrolName implements Comparator<Aluno> {
+public class ComparingBirthD_EnrolD_Name implements Comparator<Aluno> {
 
 	@Override
 	public int compare (Aluno a, Aluno b){
@@ -12,8 +12,8 @@ public class ComparingBithEnrolName implements Comparator<Aluno> {
 				Comparator<String> c = String.CASE_INSENSITIVE_ORDER;
 				return c.compare(a.getNome(), b.getNome());
 			}
-			return a.getAnoMatricula()- b.getAnoMatricula();
+			return b.getAnoMatricula()- a.getAnoMatricula();
 		}
-		return a.getAnoNascimento()- b.getAnoNascimento();
+		return b.getAnoNascimento()- a.getAnoNascimento();
 	}
 }
