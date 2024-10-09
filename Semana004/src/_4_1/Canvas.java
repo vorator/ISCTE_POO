@@ -15,13 +15,16 @@ public class Canvas<Canvas>{
 		this.figuras = new ArrayList<Figura>();
 	}
 
+	
 	public Canvas(int size){
 		this.figuras = new ArrayList<Figura>(size);
 	}
 
+	
 	public Figura get(int p){
 		return figuras.get(p);
 	}
+	
 	
 	// Adicionar figura
 	public void add(Figura f){

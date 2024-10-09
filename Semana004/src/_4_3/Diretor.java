@@ -10,15 +10,18 @@ public class Diretor extends Funcionario{
 		this.lucroRegiao = 0.0;
 	}
 	
+	
 	@Override
 	public void setLucro(double lucro){
 		this.lucroRegiao = lucro;
 	}
 	
+	
 	@Override
 	public double getLucro(){
 		return this.lucroRegiao;
 	}
+	
 	
 	@Override
 	public double getSalario(){

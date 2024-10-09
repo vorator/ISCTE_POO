@@ -1,13 +1,12 @@
 package _4_1;
 
-public abstract class Figura {
+public class Figura extends AbstractFigure{
 
 	private int x;
 	private int y;
 	
 	public Figura (int x, int y){
-		this.x = x;
-		this.y = y;
+		super(x, y);
 	}
 	
 	public int getX(){
@@ -18,12 +17,22 @@ public abstract class Figura {
 		return y;
 	}
 	
-	public abstract double getPerimetro();
+	//public double getPerimetro(){};
 	
-	public abstract double getArea();
+	//public double getArea();
 	
 	@Override
 	public String toString(){
 		return "Position: (" + x + "," + y + ")";
+	}
+
+	@Override
+	public double getPerimetro() {
+		return 0;
+	}
+
+	@Override
+	public double getArea() {
+		return 0;
 	}
 }
