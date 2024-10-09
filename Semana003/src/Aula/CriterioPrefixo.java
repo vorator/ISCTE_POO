@@ -1,3 +1,4 @@
+package Aula;
 public class CriterioPrefixo implements CriterioDeSelecao<String> {
     private String prefixo;
 

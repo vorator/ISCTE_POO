@@ -1,3 +1,4 @@
+package Aula;
 public class CriterioTamanhoMenorQue implements CriterioDeSelecao<String> {
     private int tamanhoMaximo;
 

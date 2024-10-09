@@ -1,3 +1,4 @@
+package Aula;
 
 public interface Comparator<T> {
 	int comparing(T fisrt, T second);
