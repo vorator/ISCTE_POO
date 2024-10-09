@@ -1,13 +1,23 @@
 package _4_2;
+import static java.lang.System.out;
 
-public class LineStudentReader extends GenericTextFileReader<Student> {
+import java.io.File;
+
+public class LineStudentReader extends LineObjectReader<Student> {
     
 	
+	public LineStudentReader(File file) {
+		super(file);
+	}
+
 	@Override
-    protected Student createObjectFromLine(String line) {  
-        String[] parts = line.split(",");
-        int numero = Integer.parseInt(parts[0]);
-        String nome = parts[1];
-        return new Student(nome, numero);
-    }
+	public Student lineToObject(String line) {
+		String[] parts = line.split(",");
+        if (parts.length != 2) {
+            throw new IllegalArgumentException("Formato inválido para Circle: " + line);
+        }
+        String nome = parts[0];
+        int numero = Integer.parseInt(parts[1].trim());
+		return new Student(nome, numero);
+	}
 }

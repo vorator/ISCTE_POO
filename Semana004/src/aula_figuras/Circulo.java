@@ -2,9 +2,9 @@ package aula_figuras;
 
 public class Circulo extends Figura{
 
-	private int raio;
+	private double raio;
 	
-	public Circulo (int x, int y, int raio){
+	public Circulo (int x, int y, double raio){
 		super(x, y);
 		this.raio = raio;
 	}
@@ -16,5 +16,10 @@ public class Circulo extends Figura{
 	
 	public double area(){
 		return Math.PI * raio * raio;
+	}
+	
+	@Override
+	public String toString(){
+		return "Position: (" + getX() + "," + getY() + ", " + raio + ")";
 	}
 }

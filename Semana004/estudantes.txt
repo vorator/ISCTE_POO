@@ -1,0 +1,7 @@
+Branca, 1
+Malvada, 2
+Encantado, 3
+Mestre, 4
+Dunga, 5
+Zangado, 6
+Atchim, 7
