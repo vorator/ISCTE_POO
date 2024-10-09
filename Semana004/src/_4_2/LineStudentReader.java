@@ -14,7 +14,7 @@ public class LineStudentReader extends LineObjectReader<Student> {
 	public Student lineToObject(String line) {
 		String[] parts = line.split(",");
         if (parts.length != 2) {
-            throw new IllegalArgumentException("Formato inválido para Circle: " + line);
+            throw new IllegalArgumentException("Formato inválido para Student: " + line);
         }
         String nome = parts[0];
         int numero = Integer.parseInt(parts[1].trim());

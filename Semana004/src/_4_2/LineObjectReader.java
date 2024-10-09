@@ -17,8 +17,6 @@ public abstract class LineObjectReader<T> {
 	
 	public List<T> read(){ //throws FileNotFoundException
 		
-		//List<T> list = new ArrayList<T>();
-		
 		try (Scanner scanner = new Scanner(file)) {
 			while (scanner.hasNextLine()) {
 				T line = lineToObject(scanner.nextLine());
