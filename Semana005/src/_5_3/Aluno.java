@@ -1,8 +1,10 @@
 package _5_3;
 import java.util.*;
+import java.util.Comparator;
+
 import static java.lang.System.out;
 
-public class Aluno  {
+public class Aluno implements Comparable<Aluno> {
 	
 	// atributos
 	private int numero;
@@ -54,5 +56,15 @@ public class Aluno  {
 	public String toString() {
 		return "Aluno [numero=" + numero + ", nome=" + nome + ", anoMatricula=" + anoMatricula + ", anoNascimento="
 				+ anoNascimento + "]";
-	}	
+	}
+
+	@Override
+	public int compareTo(Aluno o) {
+		Comparator<String> c = String.CASE_INSENSITIVE_ORDER;
+		return c.compare(this.getNome(), o.getNome());
+	}
+
+
+	
+
 }

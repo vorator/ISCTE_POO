@@ -1,14 +1,14 @@
 package _5_3;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
-
 
 import Exemplo_5_3.Pessoa;
 
 import static java.lang.System.out;
 
-public class Tests {
+public class Testes {
 	public static void main (String args[]){
 
 
@@ -23,11 +23,11 @@ public class Tests {
 
 		// 5_3 
 		// Ordenar com expressão lambda por número 
-		alunosL.sort( (a1, a2) -> a1.getNumero() - a2.getNumero() );
-		show(alunosL);
+//		alunosL.sort( (a1, a2) -> a1.getNumero() - a2.getNumero() );
+//		show(alunosL);
 		
 		//Ordenar com expressão lambda por nome;
-//		Collections.sort(alunosL, (a1, a2) -> a1.compareTo(a2));
+		Collections.sort(alunosL, (a1, a2) -> a1.compareTo(a2));
 		show(alunosL);
 	}
 
