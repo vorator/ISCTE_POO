@@ -14,7 +14,6 @@ public class Album {
 	private List<String> artists;
 	private List<Song> songs;
 
-
 	// construtor
 	public Album (String n, int y){
 		this.name = n;
@@ -23,7 +22,13 @@ public class Album {
 		this.songs = new ArrayList<Song>();
 	}
 
-
+	public Album (){
+		this.name = "";
+		this.year = 2024;
+		this.artists = new ArrayList<String>();
+		this.songs = new ArrayList<Song>();
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -56,10 +61,9 @@ public class Album {
 		this.songs.add(s);
 	}
 
-
 	@Override
 	public String toString() {
-		return "Album [name=" + name + ", year=" + year + ", artists=" + artists + ", songs=" + songs + "]";
+		return "Album = " + name + ", year = " + year + ", artists = " + artists;
 	}
 
 	// classe interna
@@ -91,11 +95,14 @@ public class Album {
 
 		@Override
 		public String toString() {
-			return "Song [name=" + name + ", duration=" + duration + ", trackNumber=" + trackNumber + "]";
+			return "Album = " + name + ", year = " + year + ", artists = " + artists
+			+ ", Song = " + name + ", duration = " + duration + ", trackNumber = " + trackNumber;
 		}
 	}
 
-	public static Album Load(File f) throws FileNotFoundException{
+	public static Album LoadAlbum(String path) throws FileNotFoundException{
+		
+		File f = new File(path);
 		
 		Scanner sc = new Scanner(f);
 
@@ -107,21 +114,22 @@ public class Album {
 		while (sc.hasNext() == true){
 			String s = sc.nextLine();
 			a.setArtists(s);
+			System.out.println(a);
 		}
-		sc.nextLine();
 		
-
+		int trackMusica = 1;
 		while (sc.hasNext() == true){
 			String[] part = sc.nextLine().split(" ", 2);
 			String nomeMusica = part[1];
 			String t = sc.nextLine().trim();
 			Time tm = new Time(t);
-			int trackMusica = 1;
-			
+			//int trackMusica = 1;
+			//System.out.println(trackMusica);
 			Song s = a.new Song(nomeMusica, tm, trackMusica);
 			a.songs.add(s);
 			trackMusica++;
 		}
+		sc.close();
 		return a;
 	}
 }
