@@ -3,14 +3,14 @@ package _6_3;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class Interval {
+public class IntervalC implements Iterable<Integer>{
 
 	// atributos
 	private final int min;
 	private final int max;
 
 	// contrutor intervalo dois inteiros
-	public Interval (int min, int max){
+	public IntervalC (int min, int max){
 		this.min = min;
 		this.max = max;
 		if (min == 0 && max == 0) {
@@ -29,18 +29,18 @@ public class Interval {
 	}
 
 	// criar intervalo dado o máximo
-	public static Interval naturals (int max){
-		return new Interval(1, max);
+	public static IntervalC naturals (int max){
+		return new IntervalC(1, max);
 	}
 
 	// criar intervalo dado um array
-	public static Interval ArrayIndexes(int[] i){
-		return new Interval(0, i.length - 1);
+	public static IntervalC ArrayIndexes(int[] i){
+		return new IntervalC(0, i.length - 1);
 	}
 
 	// criar intervalo vazio
-	public static Interval empty(){
-		return new Interval(0,0);
+	public static IntervalC empty(){
+		return new IntervalC(0,0);
 	}
 
 	@Override
