@@ -5,6 +5,8 @@ import java.util.NoSuchElementException;
 
 public class IntervalC implements Iterable<Integer>{
 
+// PONTO 6.3c	
+	
 	// atributos
 	private final int min;
 	private final int max;

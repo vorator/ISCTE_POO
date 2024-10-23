@@ -5,6 +5,8 @@ import java.util.NoSuchElementException;
 
 public class Interval {
 
+// PONTO 6.3a
+	
 	// atributos
 	private final int min;
 	private final int max;
@@ -48,7 +50,7 @@ public class Interval {
 		return "Interval [" + min + " , " + max + "]";
 	}
 
-
+// PONTO 6.3b
 	private class IntervalIterator implements Iterator<Integer> {
         private int current;
 
