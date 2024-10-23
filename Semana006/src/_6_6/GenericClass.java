@@ -8,17 +8,17 @@ public class GenericClass {
 		
 		// atributos
 		private T[] array;
-		private int currentIndex;
+		private int posicaoAtual;
 
 		// construtor
 		public ArrayIterator(T[] array) {
 			this.array = array;
-			this.currentIndex = 0;
+			this.posicaoAtual = 0;
 		}
 
 		@Override
 		public boolean hasNext() {
-			return currentIndex < array.length;
+			return posicaoAtual < array.length;
 		}
 
 		@Override
@@ -26,7 +26,7 @@ public class GenericClass {
 //			if (!hasNext()) {
 //				throw new IndexOutOfBoundsException();
 //			}
-			return array[currentIndex++];
+			return array[posicaoAtual++];
 		}
 	}
 
@@ -84,7 +84,5 @@ Outras Interfaces:
 
 Conclusão:
 - A classe ArrayIterator fornece uma maneira eficiente e flexível de iterar sobre vetores de objetos em Java. Sua implementação genérica permite que ela seja utilizada com diversos tipos de dados, tornando-a uma ferramenta útil em diversas situações.
-
-
 
  */
