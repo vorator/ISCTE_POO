@@ -6,7 +6,7 @@ public class Media {
 
 		int count = 0;
 		int sum = 0;
-		// por cada int no objeto iterável "iterable", soma ao anterior em sum e incrementa count
+		// por cada int no objeto iterável "iterable" passado ao método, soma ao anterior e incrementa count
 		for (int number : iterable) {
 			count++;
 			sum += number;

@@ -8,12 +8,13 @@ public class MediaD {
 
 		int count = 0;
 		int sum = 0;
+		
 		Iterator<Integer> iterator = iterable.iterator();
+		
 		while (iterator.hasNext()) {
 			sum += iterator.next();
 			count++;
 		}
-
 		return (double)sum/count;
 	}
 }

@@ -9,26 +9,26 @@ public class Teste {
 
 
 		// teste 6.3a
-//		Interval test = new Interval(0, 10);				System.out.println(test.toString());
-//		Interval nat = Interval.naturals(10);				System.out.println(nat.toString());
-//		Interval index = Interval.ArrayIndexes(new int[5]);	System.out.println(index.toString());
-//		Interval empty = Interval.empty();					System.out.println(empty.toString());	
+		Interval test = new Interval(0, 10);				System.out.println(test.toString());
+		Interval nat = Interval.naturals(10);				System.out.println(nat.toString());
+		Interval index = Interval.ArrayIndexes(new int[5]);	System.out.println(index.toString());
+		Interval empty = Interval.empty();					System.out.println(empty.toString());	
 
 
 		// teste 6.3b)
-//		IntervalC testC1 = new IntervalC(0, 10);
-//		for (Integer i : testC1) {
-//			System.out.println(i);
-//		}
+		IntervalC testC1 = new IntervalC(0, 10);
+		for (Integer i : testC1) {
+			System.out.println(i);
+		}
 		
 		// test 6.3c
-//		IntervalC testC1 = new IntervalC(0, 11);
-//		testC.forEach(p -> System.out.println(p));
+		IntervalC testC2 = new IntervalC(0, 11);
+		testC2.forEach(p -> System.out.println(p));
 
 
 		// teste 6.3d	
-//		IntervalC interval = new IntervalC(1, 5);
-//		System.out.println("Media Interval: " + MediaD.average(interval));
+		IntervalC interval = new IntervalC(1, 5);
+		System.out.println("Media Interval: " + MediaD.average(interval));
 
 	}
 }

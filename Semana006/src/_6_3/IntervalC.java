@@ -1,28 +1,27 @@
 package _6_3;
 
 import java.util.Iterator;
-import java.util.NoSuchElementException;
 
 public class IntervalC implements Iterable<Integer>{
 
 // PONTO 6.3c	
 	
 	// atributos
-	private final int min;
-	private final int max;
+	private final Integer min;
+	private final Integer max;
 
 	// contrutor intervalo vazio
 	public IntervalC(){
-		this.min = 0;
-		this.max = 0;
+		this.min = null;
+		this.max = null;
 		System.out.print("Intervalo vazio -> ");
 	}
 	
 	// contrutor intervalo dois inteiros
-	public IntervalC (int min, int max){
+	public IntervalC (Integer min, Integer max){
 		this.min = min;
 		this.max = max;
-		if (min == 0 && max == 0) {
+		if (min == null && max == null) {
 			System.out.print("Intervalo vazio -> ");
 		}
 	}
@@ -34,7 +33,7 @@ public class IntervalC implements Iterable<Integer>{
 	}
 	// verifica se está vazio
 	private boolean isEmpty() {
-		return min > max;
+		return min == null && max == null;
 	}
 
 	// criar intervalo dado o máximo
@@ -72,9 +71,6 @@ public class IntervalC implements Iterable<Integer>{
 
         @Override
         public Integer next() {
-//            if (!hasNext()) {
-//                throw new NoSuchElementException();
-//            }
             return current++; 
         }
     }
@@ -83,4 +79,3 @@ public class IntervalC implements Iterable<Integer>{
         return new IntervalIterator();
     }
 }
-

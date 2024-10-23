@@ -1,29 +1,28 @@
 package _6_3;
 
 import java.util.Iterator;
-import java.util.NoSuchElementException;
 
 public class Interval {
 
 // PONTO 6.3a
 	
 	// atributos
-	private final int min;
-	private final int max;
+	private final Integer min;
+	private final Integer max;
 
-	// contrutor intervalo vazio
+	// contrutor intervalo vazio considerando que o par 0,0 é um intervalo vazio 
 	public Interval(){
-		this.min = 0;
-		this.max = 0;
+		this.min = null;
+		this.max = null;
 		System.out.print("Intervalo vazio -> ");
 	}
 	
-	
+
 	// contrutor intervalo dois inteiros
-	public Interval (int min, int max){
+	public Interval (Integer min, Integer max){
 		this.min = min;
 		this.max = max;
-		if (min == 0 && max == 0) {
+		if (min == null && max == null) {
 			System.out.print("Intervalo vazio -> ");
 		}
 	}
@@ -33,9 +32,10 @@ public class Interval {
 	private int size() {
 		return isEmpty() ? 0 : max - min + 1; // se true, retorna zero, senão maximo menos o mínimo + 1
 	}
+	
 	// verifica se está vazio
 	private boolean isEmpty() {
-		return min > max;
+		return min == null && max == null;
 	}
 
 	// criar intervalo dado o máximo
@@ -75,9 +75,6 @@ public class Interval {
 
         @Override
         public Integer next() {
-//            if (!hasNext()) {
-//                throw new NoSuchElementException();
-//            }	
             return current++; 		// incrementa o atual
         }
     }
@@ -87,4 +84,3 @@ public class Interval {
         return new IntervalIterator();
     }
 }
-
