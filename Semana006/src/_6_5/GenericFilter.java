@@ -11,28 +11,27 @@ public class GenericFilter {
 	public static void main(String[] args) {
 		
 		// TESTE com STRING
-		List<String> strings = List.of("apple", "banana", "cherry");
-		Iterable<String> longStrings = select(strings, s -> s.length() > 6);
+//		List<String> strings = List.of("livro", "dado", "caneta");
+//		Iterable<String> stringsLongas = select(strings, s -> s.length() > 6);
+//		stringsLongas.forEach(p -> System.out.println(p));
 
+		
 		// TESTE com INT
-		List<Integer> numbers = List.of(1, 2, 3, 4, 5);
-		Iterable<Integer> evenNumbers = select(numbers, n -> n % 2 == 0);
-
-		// Imprimir resultados
-		longStrings.forEach(System.out::println);
-		evenNumbers.forEach(System.out::println);
+//		List<Integer> num = List.of(1, 2, 3, 4, 5);
+//		Iterable<Integer> numPares = select(num, n -> n % 2 == 0);
+//		numPares.forEach(p -> System.out.println(p));
 	}
 
 
-	// função
+	// Função genérica (String substituídos por <T>)
 	public static <T> Iterable<T> select(Iterable<T> iterable, Predicate<T> pred) {
-		List<T> result = new ArrayList<>();
-		for (T element : iterable) {
-			if (pred.test(element)) {
-				result.add(element);
+		List<T> resultado = new ArrayList<>();
+		for (T s : iterable) {
+			if (pred.test(s)) {
+				resultado.add(s);
 			}
 		}
-		return result;
+		return resultado;
 	}
 }
 

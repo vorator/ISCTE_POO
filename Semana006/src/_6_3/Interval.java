@@ -11,6 +11,14 @@ public class Interval {
 	private final int min;
 	private final int max;
 
+	// contrutor intervalo vazio
+	public Interval(){
+		this.min = 0;
+		this.max = 0;
+		System.out.print("Intervalo vazio -> ");
+	}
+	
+	
 	// contrutor intervalo dois inteiros
 	public Interval (int min, int max){
 		this.min = min;
@@ -23,7 +31,7 @@ public class Interval {
 	// auxiliares
 	// calcula o tamanho do intervalo
 	private int size() {
-		return isEmpty() ? 0 : max - min + 1;
+		return isEmpty() ? 0 : max - min + 1; // se true, retorna zero, senão maximo menos o mínimo + 1
 	}
 	// verifica se está vazio
 	private boolean isEmpty() {
@@ -31,18 +39,18 @@ public class Interval {
 	}
 
 	// criar intervalo dado o máximo
-	public static Interval naturals (int max){
+	public static Interval naturals (int max){ // naturais começam no 1, invoca o construtor com 1 e número dado
 		return new Interval(1, max);
 	}
 
 	// criar intervalo dado um array
-	public static Interval ArrayIndexes(int[] i){
+	public static Interval ArrayIndexes(int[] i){ // começa o 0, invoca o construtor com 0 e tamanho do vetor - 1 (index do array)
 		return new Interval(0, i.length - 1);
 	}
 
 	// criar intervalo vazio
-	public static Interval empty(){
-		return new Interval(0,0);
+	public static Interval empty(){ // cria um intervalo vazio
+		return new Interval();
 	}
 
 	@Override
@@ -51,27 +59,30 @@ public class Interval {
 	}
 
 // PONTO 6.3b
+	// Classe interna
 	private class IntervalIterator implements Iterator<Integer> {
-        private int current;
+        
+		private int current;
 
-        public IntervalIterator() {
+        public IntervalIterator() { // começa a iterar no minimo
             current = min;
         }
 
         @Override
-        public boolean hasNext() {
+        public boolean hasNext() {	// true enquanto o atual é menor ou igual que o máximo
             return current <= max;
         }
 
         @Override
         public Integer next() {
-            if (!hasNext()) {
-                throw new NoSuchElementException();
-            }
-            return current++; 
+//            if (!hasNext()) {
+//                throw new NoSuchElementException();
+//            }	
+            return current++; 		// incrementa o atual
         }
     }
-
+	
+	// método para instanciar um objeto iterador de Integers
     public Iterator<Integer> iterator() {
         return new IntervalIterator();
     }

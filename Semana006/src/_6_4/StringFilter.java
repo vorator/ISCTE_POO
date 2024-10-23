@@ -11,26 +11,23 @@ public class StringFilter {
 	public static void main (String[] args){
 
 		// TESTE com STRING
-		List<String> list = List.of("a", "", "b", "");
-		Iterable<String> notEmpty = select(list, s -> !s.isEmpty());
-		
-		
-		
-		
-		
+		List<String> lista = List.of("a", "", "b", "");		// cria uma lista de Strings com 4 elementos
+		Iterable<String> nVazia = select(lista, s -> !s.isEmpty()); // invoca a função select, passando a lista e predicado 
+																	 //"não vazio", atribui o resultado a objeto iterável
 		// Imprimir resultados
-		notEmpty.forEach(System.out::println);
+		nVazia.forEach(p -> System.out.println(p));
 	}
 
-	// função
+	
+	// função que devolve uma lista iteravel de Strings, passando um objeto iterável e um predicado
 	public static Iterable<String> select(Iterable<String> iterable, Predicate<String> pred) {
-		List<String> result = new ArrayList<>();
-		for (String s : iterable) {
-			if (pred.test(s)) {
-				result.add(s);
+		List<String> resultado = new ArrayList<>();  	// para guardar os elementos do predicado
+		for (String s : iterable) { 				// itera pela lista
+			if (pred.test(s)) {						// testa o pedicado em "s" devolve true/false
+				resultado.add(s);						// adiciona à lista de True
 			}
 		}
-		return result;
+		return resultado;								// retorna a lista iterável de Strings filtradas pelo predicado
 	}
 }
 

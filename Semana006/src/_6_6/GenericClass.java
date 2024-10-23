@@ -5,9 +5,12 @@ import java.util.Iterator;
 public class GenericClass {
 
 	public class ArrayIterator<T> implements Iterator<T> {
+		
+		// atributos
 		private T[] array;
 		private int currentIndex;
 
+		// construtor
 		public ArrayIterator(T[] array) {
 			this.array = array;
 			this.currentIndex = 0;
@@ -20,9 +23,9 @@ public class GenericClass {
 
 		@Override
 		public T next() {
-			if (!hasNext()) {
-				throw new IndexOutOfBoundsException();
-			}
+//			if (!hasNext()) {
+//				throw new IndexOutOfBoundsException();
+//			}
 			return array[currentIndex++];
 		}
 	}
@@ -33,8 +36,6 @@ public class GenericClass {
 		// TESTE com INT
 		Integer[] integerArray = {1, 2, 3, 4, 5};
 		GenericClass.ArrayIterator<Integer> integerIterator = new GenericClass().new ArrayIterator<>(integerArray);
-		
-		// Imprimir resultados
 		while (integerIterator.hasNext()) {
 			System.out.println(integerIterator.next());
 		}
@@ -45,8 +46,6 @@ public class GenericClass {
 		// TESTE com INT
 		String[] stringArray = {"apple", "banana", "orange", "grape"};
 		GenericClass.ArrayIterator<String> stringIterator = new GenericClass().new ArrayIterator<>(stringArray);
-
-		// Imprimir resultados
 		while (stringIterator.hasNext()) {
 			System.out.println(stringIterator.next());
 		}

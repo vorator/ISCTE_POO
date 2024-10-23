@@ -11,6 +11,13 @@ public class IntervalC implements Iterable<Integer>{
 	private final int min;
 	private final int max;
 
+	// contrutor intervalo vazio
+	public IntervalC(){
+		this.min = 0;
+		this.max = 0;
+		System.out.print("Intervalo vazio -> ");
+	}
+	
 	// contrutor intervalo dois inteiros
 	public IntervalC (int min, int max){
 		this.min = min;
@@ -41,8 +48,8 @@ public class IntervalC implements Iterable<Integer>{
 	}
 
 	// criar intervalo vazio
-	public static IntervalC empty(){
-		return new IntervalC(0,0);
+	public static IntervalC empty(){ // cria um intervalo vazio
+		return new IntervalC();
 	}
 
 	@Override
@@ -65,9 +72,9 @@ public class IntervalC implements Iterable<Integer>{
 
         @Override
         public Integer next() {
-            if (!hasNext()) {
-                throw new NoSuchElementException();
-            }
+//            if (!hasNext()) {
+//                throw new NoSuchElementException();
+//            }
             return current++; 
         }
     }
